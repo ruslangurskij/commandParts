@@ -1,0 +1,12 @@
+   switch (commandParts[0])
+                {
+                    case "commit":
+                        if (commandParts.Length > 1)
+                        {
+                            string message = string.Join(" ", commandParts.Skip(1));
+                            repo.Commit(message);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid commit command. Usage: commit <message>");
+                        }
